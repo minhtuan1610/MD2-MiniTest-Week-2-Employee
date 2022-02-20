@@ -25,6 +25,7 @@ public class Main {
                 "supergirl@gmail.com", 8.0);
         //  Hiển thị thông tin của tất cả các nhân viên
         Method.displayEmployeeInfo(employees);
-
+        //  Tính lương thực lĩnh cho từng kiểu nhân viên
+        Method.displayNetSalary(employees);
     }
 }
