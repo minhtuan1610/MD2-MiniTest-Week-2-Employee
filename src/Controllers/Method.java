@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.Employee;
 import Models.FullTimeEmployee;
+import Models.PartTimeEmployee;
 
 import java.util.Scanner;
 
@@ -55,7 +56,16 @@ public class Method {
     }
 
     //  Tính tổng tiền trả cho nhân viên part-time
-    public static double getSumSalaryForPartTimeStaff() {
-        return 0;
+    public static void displaySumSalaryForPartTimeStaff(Employee[] employees) {
+        double sum = 0;
+        for (Employee i : employees
+        ) {
+            if (i instanceof PartTimeEmployee) {
+                sum += i.getNetSalary();
+            }
+        }
+        System.out.println("The sum of salary for part-time employee is: " + sum);
+        ;
     }
+
 }

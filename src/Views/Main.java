@@ -33,7 +33,7 @@ public class Main {
         double averageSalary = Method.getAverageSalary(employees);
         Method.displayFullTimeStaffWithBelowAverageSalary(employees, averageSalary);
         // Tính tổng số tiền phải trả cho tất cả các nhân viên part-time
-
+        Method.displaySumSalaryForPartTimeStaff(employees);
         // Sắp xếp nhân viên full-time theo mức lương tăng dần
 
     }
