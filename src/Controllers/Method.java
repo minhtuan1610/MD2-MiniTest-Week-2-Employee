@@ -68,4 +68,8 @@ public class Method {
         ;
     }
 
+    //  Sắp xếp nhân viên full-time theo mức lương tăng dần
+    public static void displayStaffByAscendingSalary(Employee[] employees) {
+
+    }
 }
