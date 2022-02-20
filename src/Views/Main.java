@@ -18,14 +18,23 @@ public class Main {
                 "batgirl@gmail.com", 1200000.0, 52000.0, 3000000.0);
         //  Nhân viên part-time
         employees[3] = new PartTimeEmployee("b1", "GreenArrow", 34, 412356789,
-                "thegreenarrow@gmail.com", 5.5);
+                "thegreenarrow@gmail.com", 10.5);
         employees[4] = new PartTimeEmployee("b2", "TheFlash", 28, 512346789,
-                "theflash@gmail.com", 2.5);
+                "theflash@gmail.com", 20.5);
         employees[5] = new PartTimeEmployee("b3", "Supergirl", 24, 612345789,
-                "supergirl@gmail.com", 8.0);
+                "supergirl@gmail.com", 30.0);
         //  Hiển thị thông tin của tất cả các nhân viên
         Method.displayEmployeeInfo(employees);
         //  Tính lương thực lĩnh cho từng kiểu nhân viên
         Method.displayNetSalary(employees);
+        //  Thêm mới nhân viên
+
+        //  Liệt kê danh sách nhân viên full-time có mức lương thấp hơn mức lương trung bình của tất cả nhân viên
+        double averageSalary = Method.getAverageSalary(employees);
+        Method.displayFullTimeStaffWithBelowAverageSalary(employees, averageSalary);
+        // Tính tổng số tiền phải trả cho tất cả các nhân viên part-time
+
+        // Sắp xếp nhân viên full-time theo mức lương tăng dần
+
     }
 }
