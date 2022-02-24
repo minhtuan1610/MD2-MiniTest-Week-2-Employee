@@ -27,7 +27,7 @@ public class Main {
         Method.displayEmployeeInfo(employees);
         //  Tính lương thực lĩnh cho từng kiểu nhân viên
         Method.displayNetSalary(employees);
-        //  Thêm mới nhân viên
+        //  Thêm mới nhân viên Full-time
 
         //  Liệt kê danh sách nhân viên full-time có mức lương thấp hơn mức lương trung bình của tất cả nhân viên
         double averageSalary = Method.getAverageSalary(employees);

@@ -4,6 +4,7 @@ import Models.Employee;
 import Models.FullTimeEmployee;
 import Models.PartTimeEmployee;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Method {
@@ -25,9 +26,70 @@ public class Method {
         }
     }
 
-    //  Thêm mới nhân viên
-    public static void addNewStaff() {
-        Scanner scanner = new Scanner(System.in);
+    //  Thêm nhân viên full-time
+    public static Employee addNewFullTimeStaff() {
+        Employee newFullTimeStaff;
+
+        System.out.println("Information of a new staff (ID, name, age):");
+        Scanner inputId = new Scanner(System.in);
+        String ID = inputId.nextLine();
+        Scanner inputName = new Scanner(System.in);
+        String name = inputName.nextLine();
+        Scanner inputAge = new Scanner(System.in);
+        int age = inputAge.nextInt();
+
+        System.out.println("Contact information of the new staff (phone, email):");
+        Scanner inputPhoneNumber = new Scanner(System.in);
+        int phoneNumber = inputPhoneNumber.nextInt();
+        Scanner inputEmail = new Scanner(System.in);
+        String email = inputEmail.nextLine();
+
+        System.out.println("Salary of the new staff (bonus, fine, base):");
+        Scanner inputBonus = new Scanner(System.in);
+        double bonus = inputBonus.nextDouble();
+        Scanner inputFine = new Scanner(System.in);
+        double fine = inputFine.nextDouble();
+        Scanner inputBaseWage = new Scanner(System.in);
+        double baseWage = inputBaseWage.nextDouble();
+
+        newFullTimeStaff = new FullTimeEmployee(ID, name, age, phoneNumber, email, bonus, fine, baseWage);
+        return newFullTimeStaff;
+    }
+
+    //  Thêm nhân viên part-time
+    public static Employee addNewPartTimeStaff() {
+        Employee newPartTimeStaff;
+
+        System.out.println("Information of a new staff (ID, name, age):");
+        Scanner inputId = new Scanner(System.in);
+        String ID = inputId.nextLine();
+        Scanner inputName = new Scanner(System.in);
+        String name = inputName.nextLine();
+        Scanner inputAge = new Scanner(System.in);
+        int age = inputAge.nextInt();
+
+        System.out.println("Contact information of the new staff (phone, email):");
+        Scanner inputPhoneNumber = new Scanner(System.in);
+        int phoneNumber = inputPhoneNumber.nextInt();
+        Scanner inputEmail = new Scanner(System.in);
+        String email = inputEmail.nextLine();
+
+        System.out.println("Work-times of the new staff:");
+        Scanner inputWorkHours = new Scanner(System.in);
+        double workHours = inputWorkHours.nextDouble();
+
+        newPartTimeStaff = new PartTimeEmployee(ID, name, age, phoneNumber, email, workHours);
+        return newPartTimeStaff;
+    }
+
+    //  In ra danh sách sau khi thêm mới nhân viên
+    public static Employee[] displayNewStaffList(Employee[] employees, Employee newEmployee) {
+        Employee[] newListStaff = new Employee[employees.length + 1];
+        for (int i = 0; i < employees.length; i++) {
+            newListStaff[i] = employees[i];
+        }
+        newListStaff[employees.length] = newEmployee;
+        return newListStaff;
     }
 
     //  Tính lương trung bình của các nhân viên
